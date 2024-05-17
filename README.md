@@ -1,8 +1,39 @@
-# Vue 3 + Vite
+# Membaca
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## Table of Contents
+- [Membaca](#membaca)
+  - [Table of Contents](#table-of-contents)
+  - [About ](#about-)
+  - [Getting Started ](#getting-started-)
+  - [Usage ](#usage-)
 
-## Recommended IDE Setup
+## About <a name = "about"></a>
+Membaca is a Vue 3 component library to scan QR code and read the content. It uses [zxingjs/browser](https://github.com/zxing-js/browser) to scan the QR code.
 
-- [VS Code](https://code.visualstudio.com/) + [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (previously Volar) and disable Vetur
-# membaca
+## Getting Started <a name = "getting_started"></a>
+To use this library, you can install it via npm or yarn.
+
+```bash
+npm install @roastedduk/membaca
+```
+
+## Usage <a name = "usage"></a>
+
+```vue
+<script setup lang="ts">
+const deviceId = ref<string>('')
+
+onMounted(() => {
+  const mediaDevices = await navigator.mediaDevices.getUserMedia({ video: true })
+  deviceId.value = mediaDevices[0].id
+})
+</script>
+
+<template>
+  <QrCamera
+    :device-id="deviceId"
+    @result="handleResult"
+    @error="handleError"
+  />
+</template>
+```

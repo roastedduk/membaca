@@ -1,8 +1,21 @@
 {
   "name": "@roastedduck/membaca",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "description": "A Vue 3 component for reading QR code and barcode using ZXing",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/roastedduk/membaca"
+  },
+  "keywords": [
+    "vue",
+    "vue3",
+    "zxing",
+    "qrcode",
+    "barcode",
+    "reader"
+  ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",

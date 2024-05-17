@@ -1,0 +1,36 @@
+{
+  "name": "membaca",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.umd.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && vue-tsc --declaration --emitDeclarationOnly",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@zxing/browser": "^0.1",
+    "vue": "^3.4.0"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.18.0",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "@zxing/library": "^0.21.0",
+    "eslint": "9.2.0",
+    "vite": "^5.2.0",
+    "vue-tsc": "^2.0.19"
+  },
+  "readme": "README.md"
+}

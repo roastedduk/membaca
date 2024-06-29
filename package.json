@@ -1,5 +1,5 @@
 {
-  "name": "@roastedduk/membaca",
+  "name": "vue-membaca",
   "type": "module",
   "version": "0.0.2",
   "description": "A Vue 3 component for reading QR code and barcode using ZXing",

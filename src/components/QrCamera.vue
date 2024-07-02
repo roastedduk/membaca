@@ -2,7 +2,7 @@
 import { BrowserQRCodeReader } from '@zxing/browser'
 import type { IScannerControls } from '@zxing/browser'
 import type { Exception as ZxingExeption, Result as ZxingResult } from '@zxing/library'
-import { onMounted, ref, watch } from 'vue'
+import { onBeforeUnmount, onMounted, ref, watch } from 'vue'
 
 const props = defineProps<{
   deviceId: string
@@ -36,6 +36,10 @@ watch(() => props.deviceId, async (newDeviceId) => {
 
 onMounted(async () => {
   await loadVideoElement(props.deviceId)
+})
+
+onBeforeUnmount(() => {
+  videoControls.value?.stop()
 })
 </script>
 
